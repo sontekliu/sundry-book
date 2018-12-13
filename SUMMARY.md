@@ -1,18 +1,18 @@
 # Summary
 
 * [简介](README.md)
-* [gitbook]
+* [gitbook](README.md)
 	* [gitbook 教程](gitbook/gitbook-doc.md)
 	* [gitbook 资料](gitbook/gitbook.md)
 	* [gitbook 集成到Github](gitbook/gitbook-to-github.md)
-	* [markdown 语法](markdown-doc.md)
-* [maven]
+	* [markdown 语法](gitbook/markdown-doc.md)
+* [maven](README.md)
 	* [Maven 私服搭建](maven/maven-nexus.md)
-* [mariadb]
+* [mariadb](README.md)
 	* [mariadb 安装](mariadb/mariadb-install.md)
 	* [mysql 安装](mariadb/mysql-install.md)
 	* [mysql 基础知识](mariadb/mysql-base.md)
-* [MongoDB]
+* [MongoDB](README.md)
 	* [MongoDB 安装](mongodb/mongodb-install.md)
 * [nginx](README.md)
 	* [Nginx 安装](nginx/nginx-install.md)
