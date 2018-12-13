@@ -1,12 +1,11 @@
 # Summary
 
 * [简介](README.md)
-* [gitbook](README.md)
+* [乱七八糟](README.md)
 	* [gitbook 教程](gitbook/gitbook-doc.md)
 	* [gitbook 资料](gitbook/gitbook.md)
 	* [gitbook 集成到Github](gitbook/gitbook-to-github.md)
 	* [markdown 语法](gitbook/markdown-doc.md)
-* [maven](README.md)
 	* [Maven 私服搭建](maven/maven-nexus.md)
 * [mariadb](README.md)
 	* [mariadb 安装](mariadb/mariadb-install.md)
@@ -18,4 +17,3 @@
 	* [Nginx 安装](nginx/nginx-install.md)
 	* [Ngixn 命令](nginx/nginx-commandline.md)
 	* [Nginx 虚拟主机](nginx/nginx-virtualhost.md)
-
