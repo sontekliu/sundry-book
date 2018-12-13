@@ -17,3 +17,6 @@
 	* [Nginx 安装](nginx/nginx-install.md)
 	* [Ngixn 命令](nginx/nginx-commandline.md)
 	* [Nginx 虚拟主机](nginx/nginx-virtualhost.md)
+* [线程世界](README.md)
+	* [01-传统线程技术](thread/01-traditional-thread.md)
+	* [02-线程之间的互斥](thread/02-traditional-mutex.md)
