@@ -113,6 +113,7 @@ public class TraditionalThreadSynchronized {
 ```
 
 1. 如果两个线程均执行 `print` 方法，那么控制台输出的结果将是如下内容（注意此结果每次输出均不一样）：
+
 ![syn_01](./images/syn_01.png)
 
 由此图可知，`java` 与 `python` 的输出明显是混乱了，没有达到互不影响的要求，即两个线程不互斥。   
