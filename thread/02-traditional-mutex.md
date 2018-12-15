@@ -127,7 +127,7 @@ public class TraditionalThreadSynchronized {
 
 如果 `synchronized` 关键字作用到代码块时，关键看括号里面的锁是什么，只要是多个线程使用的是同一把锁，那么就可以达到互斥的效果。
 
-尽量使用 `synchronized` 修饰代码块，互斥更少的代码，能达到的更高的并发性。
+尽量使用 `synchronized` 修饰代码块，互斥更少的代码，能达到更高的并发性。
 
 
 
