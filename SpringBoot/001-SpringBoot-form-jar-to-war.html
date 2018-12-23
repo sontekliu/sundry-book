@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>mysql 基础知识 · GitBook</title>
+        <title>01-SpringBoot-Jar包转war包 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,7 +60,7 @@
     <link rel="next" href="../" />
     
     
-    <link rel="prev" href="mysql-install.html" />
+    <link rel="prev" href="../" />
     
 
     </head>
@@ -200,9 +200,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="mariadb-install.html">
+        <li class="chapter " data-level="1.3.1" data-path="../mariadb/mariadb-install.html">
             
-                <a href="mariadb-install.html">
+                <a href="../mariadb/mariadb-install.html">
             
                     
                     mariadb 安装
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="mysql-install.html">
+        <li class="chapter " data-level="1.3.2" data-path="../mariadb/mysql-install.html">
             
-                <a href="mysql-install.html">
+                <a href="../mariadb/mysql-install.html">
             
                     
                     mysql 安装
@@ -226,9 +226,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3" data-path="mysql-base.html">
+        <li class="chapter " data-level="1.3.3" data-path="../mariadb/mysql-base.html">
             
-                <a href="mysql-base.html">
+                <a href="../mariadb/mysql-base.html">
             
                     
                     mysql 基础知识
@@ -380,9 +380,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../SpringBoot/001-SpringBoot-form-jar-to-war.html">
+        <li class="chapter active" data-level="1.7.1" data-path="001-SpringBoot-form-jar-to-war.html">
             
-                <a href="../SpringBoot/001-SpringBoot-form-jar-to-war.html">
+                <a href="001-SpringBoot-form-jar-to-war.html">
             
                     
                     01-SpringBoot-Jar包转war包
@@ -518,7 +518,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >mysql 基础知识</a>
+        <a href=".." >01-SpringBoot-Jar包转war包</a>
     </h1>
 </div>
 
@@ -533,17 +533,64 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mysql-&#x57FA;&#x7840;&#x77E5;&#x8BC6;">MySQL &#x57FA;&#x7840;&#x77E5;&#x8BC6;</h1>
+                                <h1 id="springboot-&#x6709;-jar-&#x6539;&#x6210;-war-&#x90E8;&#x7F72;">SpringBoot &#x6709; jar &#x6539;&#x6210; war &#x90E8;&#x7F72;</h1>
+<p>&#x672C;&#x6587;&#x662F;&#x57FA;&#x4E8E; SpringBoot 2.0 &#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x3002;&#x6CE8;&#x610F;&#xFF0C;SpringBoot 2.0 &#x9700;&#x8981; Tomcat 8.5 &#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;SpringBoot &#x662F;&#x6253;&#x6210; jar &#x5305;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4EBA;&#x53EF;&#x80FD;&#x66F4;&#x719F;&#x6089;&#x6253;&#x6210; war &#x5305;&#x653E;&#x5230; Tomcat &#x91CC;&#x9762;&#x90E8;&#x7F72;&#x3002;</p>
+<p>SpringBoot &#x6709; jar &#x6539;&#x6210; war &#x5927;&#x7EA6;&#x6709;&#x5982;&#x4E0B;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<blockquote>
 <ol>
-<li>&#x5173;&#x4E8E;&#x884C;&#x7EA7;&#x9501;&#xFF08;InnoDB&#x5F15;&#x64CE;&#xFF09;<br>&#x5728;&#x4E8B;&#x7269;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x6267;&#x884C;&#x4E86;<code>UPDATE</code>&#x3001;<code>DELETE</code>&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x4E0A;&#x9501;&#xFF0C;<code>INSERT</code>&#x8BED;&#x53E5;&#x4E0D;&#x4F1A;&#x4E0A;&#x9501;&#x3002;  <blockquote>
-<p>SQL&#x8BED;&#x53E5;&#x4E0D;&#x540C;&#xFF0C;&#x4E0A;&#x7684;&#x9501;&#x7684;&#x8303;&#x56F4;&#x4E5F;&#x4E0D;&#x540C;:    </p>
-<ul>
-<li><code>UPDATE test SET name=&apos;aaa&apos; WHERE id = 23</code>&#xFF0C;&#x6B64;SQL&#x6709;<code>WHERE</code>&#x6761;&#x4EF6;&#xFF0C;&#x53EA;&#x5728;&#x9009;&#x5B9A;&#x7684;&#x8BB0;&#x5F55;&#x4E0A;&#x52A0;&#x9501;&#xFF0C;</li>
-<li><code>UPDATE test SET name=&apos;aaa&apos;</code>&#xFF0C;&#x6B64;SQL&#x65E0;<code>WHERE</code>&#x6761;&#x4EF6;&#xFF0C;&#x5168;&#x8868;&#x52A0;&#x9501;&#x3002;</li>
-</ul>
+<li>&#x4FEE;&#x6539; pom.xml &#x6587;&#x4EF6;&#xFF0C;&#x5C06; jar &#x6539;&#x6210; war</li>
+<li>&#x4F7F;&#x5185;&#x7F6E;&#x7684; Servlet &#x5BB9;&#x5668;&#x4E3A; provided</li>
+<li>&#x542F;&#x52A8;&#x7C7B;&#x7EE7;&#x627F; SpringBootServletInitializer</li>
+<li>&#x90E8;&#x7F72;</li>
+</ol>
 </blockquote>
+<h4 id="1-&#x4FEE;&#x6539;-pomxml-&#x6587;&#x4EF6;&#xFF0C;&#x5C06;-jar-&#x6539;&#x6210;-war">1. &#x4FEE;&#x6539; pom.xml &#x6587;&#x4EF6;&#xFF0C;&#x5C06; jar &#x6539;&#x6210; war</h4>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">packaging</span>&gt;</span>war<span class="hljs-tag">&lt;/<span class="hljs-name">packaging</span>&gt;</span>
+</code></pre>
+<h4 id="2-&#x4FEE;&#x6539;-pomxml-&#x4F7F;&#x5185;&#x7F6E;&#x7684;-servlet-&#x5BB9;&#x5668;&#x4E3A;-provided">2. &#x4FEE;&#x6539; pom.xml &#x4F7F;&#x5185;&#x7F6E;&#x7684; Servlet &#x5BB9;&#x5668;&#x4E3A; provided</h4>
+<p>&#x4FEE;&#x6539; pom.xml &#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>
+</span></code></pre>
+<h4 id="3-&#x542F;&#x52A8;&#x7C7B;&#x7EE7;&#x627F;-springbootservletinitializer">3. &#x542F;&#x52A8;&#x7C7B;&#x7EE7;&#x627F; SpringBootServletInitializer</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.builder.SpringApplicationBuilder;
+<span class="hljs-keyword">import</span> org.springframework.boot.web.support.SpringBootServletInitializer;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpringBootWebApplication</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SpringBootServletInitializer</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> SpringApplicationBuilder <span class="hljs-title">configure</span><span class="hljs-params">(SpringApplicationBuilder application)</span></span>{         <span class="hljs-keyword">return</span> application.sources(SpringBootWebApplication.class);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        SpringApplication.run(SpringBootWebApplication.class, args);
+    }
+}
+</code></pre>
+<h4 id="4-&#x90E8;&#x7F72;">4. &#x90E8;&#x7F72;</h4>
+<p>&#x90E8;&#x7F72;&#x5206;&#x4E3A;&#x672C;&#x5730;&#x90E8;&#x7F72;&#x548C;&#x8FDC;&#x7A0B;&#x90E8;&#x7F72;&#xFF0C;&#x672C;&#x5730;&#x90E8;&#x7F72;&#x5373;&#x901A;&#x8FC7;&#x672C;&#x5730;&#x7684; IDE &#x8FDB;&#x884C;&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#xFF1B;&#x8FDC;&#x7A0B;&#x90E8;&#x7F72;&#x662F;&#x6307;&#x90E8;&#x7F72;&#x5230;&#x67D0;&#x53F0;&#x8FDC;&#x7A0B;&#x96C6;&#x7FA4;&#x7684; Tomcat </p>
+<ol>
+<li><p>&#x672C;&#x5730;&#x90E8;&#x7F72;&#xFF0C;&#x6B64;&#x5904;&#x4F7F;&#x7528; IDEA &#x4E3A;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-shell">mvn spring-boot:run
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x6B64;&#x5904;&#x76F4;&#x63A5;&#x8FD0;&#x884C; main &#x65B9;&#x6CD5;&#x597D;&#x50CF;&#x4E0D;&#x884C;&#x3002;</p>
+</li>
+<li><p>&#x6253;&#x5305;&#x8FDC;&#x7A0B;&#x90E8;&#x7F72;</p>
+<pre><code class="lang-shell">mvn clean package
+</code></pre>
+<p>&#x5C06;&#x6253;&#x51FA;&#x7684; war &#x6587;&#x4EF6;&#xFF0C;&#x5373; /target/xxxx-version.war &#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;&#x6307;&#x5B9A;&#x7684; tomcat &#x542F;&#x52A8;&#x5373;&#x53EF;&#x3002;</p>
 </li>
 </ol>
+<p><strong>&#x53C2;&#x8003;&#x8D44;&#x6599;</strong></p>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.0.1.RELEASE/reference/htmlsingle/#howto-create-a-deployable-war-file" target="_blank">https://docs.spring.io/spring-boot/docs/2.0.1.RELEASE/reference/htmlsingle/#howto-create-a-deployable-war-file</a></p>
+<p><a href="https://www.mkyong.com/spring-boot/spring-boot-deploy-war-file-to-tomcat/" target="_blank">https://www.mkyong.com/spring-boot/spring-boot-deploy-war-file-to-tomcat/</a></p>
 
                                 
                                 </section>
@@ -571,12 +618,12 @@
 
             
                 
-                <a href="mysql-install.html" class="navigation navigation-prev " aria-label="Previous page: mysql 安装">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Spring与SpringBoot">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../" class="navigation navigation-next " aria-label="Next page: MongoDB">
+                <a href="../" class="navigation navigation-next " aria-label="Next page: 线程世界">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -587,7 +634,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mysql 基础知识","level":"1.3.3","depth":2,"next":{"title":"MongoDB","level":"1.4","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"MongoDB 安装","level":"1.4.1","depth":2,"path":"mongodb/mongodb-install.md","ref":"mongodb/mongodb-install.md","articles":[]}]},"previous":{"title":"mysql 安装","level":"1.3.2","depth":2,"path":"mariadb/mysql-install.md","ref":"mariadb/mysql-install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"mariadb/mysql-base.md","mtime":"2018-12-15T11:54:48.712Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-23T13:42:33.531Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01-SpringBoot-Jar包转war包","level":"1.7.1","depth":2,"next":{"title":"线程世界","level":"1.8","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"01-传统线程技术","level":"1.8.1","depth":2,"path":"thread/01-traditional-thread.md","ref":"thread/01-traditional-thread.md","articles":[]},{"title":"02-线程之间的互斥","level":"1.8.2","depth":2,"path":"thread/02-traditional-mutex.md","ref":"thread/02-traditional-mutex.md","articles":[]},{"title":"03-线程之间的通信","level":"1.8.3","depth":2,"path":"thread/03-traditional-communication.md","ref":"thread/03-traditional-communication.md","articles":[]}]},"previous":{"title":"Spring与SpringBoot","level":"1.7","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"01-SpringBoot-Jar包转war包","level":"1.7.1","depth":2,"path":"SpringBoot/001-SpringBoot-form-jar-to-war.md","ref":"SpringBoot/001-SpringBoot-form-jar-to-war.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SpringBoot/001-SpringBoot-form-jar-to-war.md","mtime":"2018-12-23T13:41:52.905Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-23T13:42:33.531Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
