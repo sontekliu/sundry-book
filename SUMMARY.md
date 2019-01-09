@@ -25,6 +25,8 @@
 	* [01-传统线程技术](thread/01-traditional-thread.md)
 	* [02-线程之间的互斥](thread/02-traditional-mutex.md)
 	* [03-线程之间的通信](thread/03-traditional-communication.md)
+	* [04-线程状态](thread/04-traditional-thread-state.md)
+	* [05-线程join方法](thread/05-traditional-thread-join.md)
 * [Linux](README.md)
 	* [01-Linux常用命令总结](linux/001-linux-command.md)
 
