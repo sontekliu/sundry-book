@@ -106,7 +106,8 @@ public final synchronized void join(long millis) throws InterruptedException {
 **第二，**t1 未获得 CPU 资源，而是由主线程即 main 方法所在的线程获得 CPU 资源，继续执行 `t1.join()` 方法，由 join(long millis) 方法的源码可知，此方法是一个同步方法，并且使用的锁是该线程对象本身。此时只有主线程访问，没有竞争的情况，所以主线程获得锁，继续执行到 `while(isAlive())` 时，由于 t1 目前还在 JVM 虚拟机中，结果肯定为 true，所以主线程继续执行到 wait(0) 方法，此时主线程释放锁，并且处于 `WATING` 状态。我们都知道处于 `WAITING` 状态的线程如果有其他线程调用了 notify() 或者 notifyAll() 方法时，此线程才有 `WAITING` 状态转变为 `RUNNABLE` 状态，而此示例代码中并没有任何线程调用 notfiy() 和 notifyAll() 方法，所以 CPU 资源再次由 t1 线程获得并执行代码，输出 5 条打印内容，t1 线程结束变为 `TERMINATED` 状态。此时 CPU 的资源又切换到主线程，此时 isAlive() 方法返回 false，join() 方法执行结束，最后主线程输出 Main over。
 
 由以上分析可知：  
-	1. join() 确实是等待该线程终止，具体一点就是调用该线程(t1)的线程(主线程)，必须要等到该线程执行完成之后再执行，以上示例仅仅是以主线程和子线程为示例。
+
+1. join() 确实是等待该线程终止，具体一点就是调用该线程(t1)的线程(主线程)，必须要等到该线程执行完成之后再执行，以上示例仅仅是以主线程和子线程为示例。
 
 
 
