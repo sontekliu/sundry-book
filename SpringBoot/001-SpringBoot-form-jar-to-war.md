@@ -14,9 +14,7 @@ SpringBoot 有 jar 改成 war 大约有如下步骤：
 
 > 注意，你的应用可能是单应用，也可能是由多 Module 组合而成的。两种不同结构的应用配置稍有差别。
 
-
-如果你的应用用到了 Maven，那么你的应用可能是分层搭建的，如，platform-parent，platform-base（公共代码），platform-dao，platform-service，platform-web。
-不同的层次代表不同的 Module，熟悉 Web 开发的同学应该了解这种结构。为了简化，此处仅以 platform-parent，platform-base，platform-web 为例，即 platform-web 包括 Dao 和 Service。
+如果你的应用用到了 Maven，那么你的应用可能是分层搭建的，如，platform-parent，platform-base（公共代码），platform-dao，platform-service，platform-web。不同的层次代表不同的 Module，熟悉 Web 开发的同学应该了解这种结构。为了简化，此处仅以 platform-parent，platform-base，platform-web 为例，即 platform-web 包括 Dao 和 Service。
 
 #### 1. 修改 pom.xml 文件，将 jar 改成 war
 
@@ -47,7 +45,7 @@ SpringBoot 有 jar 改成 war 大约有如下步骤：
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-tomcat</artifactId>
 	<scope>provided</scope>
-</dependency
+</dependency>
 ```
 
 如果是多 Module 的情况，排除内置的 Tomcat 容器，是在 platform-base 下面的 POM.xml 文件，而添加 spring-boot-starter-tomcat 
@@ -76,14 +74,14 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 }
 ```
 
-Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖 Maven 的一个插件 spring-boot-maven-plugin。
-如果将 Spring Boot 项目由 jar 包转换成 war包，转换成的 war 包既可以像传统项目那样，将 war 包放到 Tomcat 里面启动运行，
-也可以像可执行 jar 包一样，使用 `java -jar platform-web.war` 来启动项目，此时的 war 包既可以脱离 Tomcat 独立运行，又可以
-部署到 Tomcat 容器里面运行。  
+Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖 Maven 的一个插件 spring-boot-maven-plugin。  
+如果将 Spring Boot 项目由 jar 包转换成 war包，转换成的 war 包既可以像传统项目那样，将 war 包放到 Tomcat 里面启动运行，也可以像可执行 jar 包一样，使用 `java -jar platform-web.war` 来启动项目，此时的 war 包既可以脱离 Tomcat 独立运行，又可以部署到 Tomcat 容器里面运行。  
 
 先说第二种情况，即生成的 war 包即可独立运行，又能像传统项目一样部署到 Tomcat 里面运行。  
 * 首先，启动类必须有 main 方法。
-* 第二，就是 **platform-web** 必须有 spring-boot-maven-plugin 的插件。插件配置如下：
+* 第二，就是 **platform-web** 必须有 spring-boot-maven-plugin 的插件。  
+
+插件配置如下：
 
 ```xml
 <build>
@@ -117,8 +115,7 @@ Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖
 
 传统的 war 包没有额外的类文件以及内置的 Tomcat 容器。
 
-由此可知，spring-boot-maven-plugin 插件的作用就是将 Spring Boot 项目打包成可执行的 jar 或者 war。并将 Tomcat 内置到应用中，
-从而实现独立部署。
+由此可知，spring-boot-maven-plugin 插件的作用就是将 Spring Boot 项目打包成可执行的 jar 或者 war，并将 Tomcat 内置到应用中，从而实现独立部署。
 
 #### 4. 打包部署
 
