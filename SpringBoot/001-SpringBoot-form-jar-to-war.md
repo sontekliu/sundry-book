@@ -98,15 +98,15 @@ Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖
 
 此时打成 war 包的文件结构如图：
 
-![可执行的war包](../images/execute-war.png)  
-![可执行的war包内置Tomcat](../images/execute-war-embed-tomcat.png)  
+![可执行的war包](./images/execute-war.png)  
+![可执行的war包内置Tomcat](./images/execute-war-embed-tomcat.png)  
 由图可知，可执行的 war 包拥有一些而外的类和内置的 Tomcat 容器。
 
 如果是第一种情况，即传统的 war 项目，只能部署在 Tomcat 中运行。
 首先，删除 spring-boot-maven-plugin 插件的配置，第二，删除掉启动类的 main 方法。此时打成的 war 包文件结构如下：
 
-![传统的war包](../images/traditional-war.png)  
-![传统的war包无Tomcat](../images/traditional-war-no-tomcat.png)  
+![传统的war包](./images/traditional-war.png)  
+![传统的war包无Tomcat](./images/traditional-war-no-tomcat.png)  
 
 传统的 war 包没有额外的类文件以及内置的 Tomcat 容器。
 
