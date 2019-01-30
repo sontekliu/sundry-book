@@ -9,7 +9,7 @@ SpringBoot 有 jar 改成 war 大约有如下步骤：
 > 1. 修改 pom.xml 文件，将 jar 改成 war
 > 2. 排除内置的 Servlet 容器，并添加依赖spring-boot-starter-tomcat，使其 scope 为 provided。
 > 3. 启动类继承 SpringBootServletInitializer
-> 4. 打包启动
+> 4. 打包部署
 
 > 注意，你的应用可能是单应用，也可能是由多 Module 组合而成的。两种不同结果的应用配置稍有差别。
 
@@ -113,19 +113,17 @@ Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖
 由此可知，spring-boot-maven-plugin 插件的作用就是将 Spring Boot 项目打包成可执行的 jar 或者 war。并将 Tomcat 内置到应用中，
 从而实现独立部署。
 
-#### 4. 部署
+#### 4. 打包部署
 
-部署分为本地部署和远程部署，本地部署即通过本地的 IDE 进行启动调试；远程部署是指部署到某台远程机器的 Tomcat
+根据不同的情况，打包部署的情况也不同。
 
-1. 本地部署，此处使用 IDEA 为例。
+1. 可执行 war 包
+	
+	* 使用 main 方法启动。
+	* 使用 `spring-boot:run` 命令启动
+	* 使用传统 war 包的形式启动
 
-   ```shell
-   mvn spring-boot:run
-   ```
-
-   注意：此处直接运行 main 方法好像不行。
-
-2. 打包远程部署
+2. 传统 war 包
 
    ```shell
    mvn clean package
