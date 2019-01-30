@@ -2,29 +2,31 @@
 
 本文是基于 SpringBoot 2.0 以上版本。注意，SpringBoot 2.0 需要 Tomcat 8.5 以上版本。
 
-默认情况下，SpringBoot 是打成 jar 包的，但是有人可能更熟悉打成 war 部署到 Tomcat 等其他 Servlet 容器里面。
+默认情况下，SpringBoot 是打成 jar 包的，但是有人可能更喜欢打成 war 部署到 Tomcat 或其他 Servlet 容器中。
 
 SpringBoot 有 jar 改成 war 大约有如下步骤：
 
 > 1. 修改 pom.xml 文件，将 jar 改成 war
-> 2. 排除内置的 Servlet 容器，并添加依赖spring-boot-starter-tomcat，使其 scope 为 provided。
+> 2. 排除内置的 Tomcat 容器，并添加依赖 spring-boot-starter-tomcat，使其 scope 为 provided。
 > 3. 启动类继承 SpringBootServletInitializer
-> 4. 打包部署
+> 4. 打包部署   
 
-> 注意，你的应用可能是单应用，也可能是由多 Module 组合而成的。两种不同结果的应用配置稍有差别。
 
-如果你的应用是 Maven 搭建的，那么你可能分层搭建的，如，platform-parent，platform-base（公共代码），platform-dao，platform-service，platform-web。
-不同的层次代表不同的 Module。此处为了简化，仅以 platform-parent，platform-base，platform-web 为例，即 platform-web 包括 Dao 和 Service。
+> 注意，你的应用可能是单应用，也可能是由多 Module 组合而成的。两种不同结构的应用配置稍有差别。
+
+
+如果你的应用用到了 Maven，那么你的应用可能是分层搭建的，如，platform-parent，platform-base（公共代码），platform-dao，platform-service，platform-web。
+不同的层次代表不同的 Module，熟悉 Web 开发的同学应该了解这种结构。为了简化，此处仅以 platform-parent，platform-base，platform-web 为例，即 platform-web 包括 Dao 和 Service。
 
 #### 1. 修改 pom.xml 文件，将 jar 改成 war
-
-如果是多 Module 的情况，只是将 platform-web 的 jar 改成 war 即可。
 
 ```xml
 <packaging>war</packaging>
 ```
 
-#### 2. 排除内置的 Servlet 容器，并添加依赖 spring-boot-starter-tomcat，使其 scope 为 provided。
+如果是多 Module 的情况，只是将 **platform-web** 的 jar 改成 war 即可。
+
+#### 2. 排除内置的 Tomcat 容器，并添加依赖 spring-boot-starter-tomcat，使其 scope 为 provided。
 
 修改 pom.xml 添加如下内容：
 
@@ -48,8 +50,8 @@ SpringBoot 有 jar 改成 war 大约有如下步骤：
 </dependency
 ```
 
-如果是多 Module 的情况，排除默认内置的 Tomcat 容器，是在 platform-base 下面的 POM.xml 文件，而添加 spring-boot-starter-tomcat 
-使其 scope 为 provided 是在 platform-web 下面的 POM.xml 中。
+如果是多 Module 的情况，排除内置的 Tomcat 容器，是在 platform-base 下面的 POM.xml 文件，而添加 spring-boot-starter-tomcat 
+依赖是在 platform-web 下面的 POM.xml 中。
 
 #### 3. 启动类继承 SpringBootServletInitializer
 
@@ -62,6 +64,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 @SpringBootApplication
 public class SpringBootWebApplication extends SpringBootServletInitializer {
 
+	// 相当于 WEB-INF/web.xml
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application){         
 		return application.sources(SpringBootWebApplication.class);
@@ -78,8 +81,9 @@ Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖
 也可以像可执行 jar 包一样，使用 `java -jar platform-web.war` 来启动项目，此时的 war 包既可以脱离 Tomcat 独立运行，又可以
 部署到 Tomcat 容器里面运行。  
 
-先说第二种情况，即生成的 war 包即可独立运行，又能像传统项目一样部署到 Tomcat 里面运行。
-首先，启动类必须有 main 方法，第二，就是 **platform-web** 必须有 spring-boot-maven-plugin 的插件。配置如下：
+先说第二种情况，即生成的 war 包即可独立运行，又能像传统项目一样部署到 Tomcat 里面运行。  
+* 首先，启动类必须有 main 方法。
+* 第二，就是 **platform-web** 必须有 spring-boot-maven-plugin 的插件。插件配置如下：
 
 ```xml
 <build>
@@ -102,8 +106,11 @@ Spring Boot 之所以能够打包成一个可执行的 jar 包，完全是依赖
 ![可执行的war包内置Tomcat](./images/execute-war-embed-tomcat.png)  
 由图可知，可执行的 war 包拥有一些而外的类和内置的 Tomcat 容器。
 
-如果是第一种情况，即传统的 war 项目，只能部署在 Tomcat 中运行。
-首先，删除 spring-boot-maven-plugin 插件的配置，第二，删除掉启动类的 main 方法。此时打成的 war 包文件结构如下：
+如果是第一种情况，即传统的 war 项目，只能部署在 Tomcat 中运行。   
+* 首先，删除 spring-boot-maven-plugin 插件的配置。
+* 第二，删除掉启动类的 main 方法。
+
+此时打成的 war 包文件结构如下：
 
 ![传统的war包](./images/traditional-war.png)  
 ![传统的war包无Tomcat](./images/traditional-war-no-tomcat.png)  
