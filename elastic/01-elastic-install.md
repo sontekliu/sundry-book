@@ -1,4 +1,4 @@
-# 01 ElasticSearch 安装
+# ElasticSearch 安装
 
 全文搜索目前已成为各个互联网公司常见的需求，ElasticSearch（以下简称ES）已成为目前市面上全文搜索引擎的首选。
 

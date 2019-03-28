@@ -34,6 +34,30 @@
     GitBook version:3.2.2
     ```
 
+### 3. Gitbook 目录折叠
+
+如果使用 gitbook 编写大量的文章，目录不能折叠就显得杂乱无章，很难找到自己想要的章节，默认情况下 gitbook 的目录是展开的。
+为此，可以使用 gitbook 插件，使其目录折叠。此小结主要介绍如何使 gitbook 目录折叠。
+
+插件名称是：`toggle-chapters`。具体配置过程如下：  
+首先在根目录下（即SUMMARY.md同级的目录），的配置文件 `book.json` 中添加插件配置，如下内容：
+```json
+{
+    "plugins":["toggle-chapters"]
+}
+```
+
+配置完成之后，需进行如下步骤：  
+```shell
+$ cd gitbook 目录
+$ npm install gitbook-plugin-toggle-chapters  # 安装插件
+$ gitbook build
+$ gitbook serve
+```
+
+访问 `http://localhost:4000` 看插件是否生效。
+
+
 	
 #### Gitbook 参考资料
 
