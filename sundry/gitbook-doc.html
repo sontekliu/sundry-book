@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -585,9 +589,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../elastic/">
+        <li class="chapter " data-level="1.11" data-path="../">
             
-                <a href="../elastic/">
+                <a href="../">
             
                     
                     ElasticSearch
@@ -693,6 +697,21 @@
   GitBook version:3.2.2
 </code></pre></li>
 </ul>
+<h3 id="3-gitbook-&#x76EE;&#x5F55;&#x6298;&#x53E0;">3. Gitbook &#x76EE;&#x5F55;&#x6298;&#x53E0;</h3>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528; gitbook &#x7F16;&#x5199;&#x5927;&#x91CF;&#x7684;&#x6587;&#x7AE0;&#xFF0C;&#x76EE;&#x5F55;&#x4E0D;&#x80FD;&#x6298;&#x53E0;&#x5C31;&#x663E;&#x5F97;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#xFF0C;&#x5F88;&#x96BE;&#x627E;&#x5230;&#x81EA;&#x5DF1;&#x60F3;&#x8981;&#x7684;&#x7AE0;&#x8282;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; gitbook &#x7684;&#x76EE;&#x5F55;&#x662F;&#x5C55;&#x5F00;&#x7684;&#x3002;
+&#x4E3A;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; gitbook &#x63D2;&#x4EF6;&#xFF0C;&#x4F7F;&#x5176;&#x76EE;&#x5F55;&#x6298;&#x53E0;&#x3002;&#x6B64;&#x5C0F;&#x7ED3;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4F7F; gitbook &#x76EE;&#x5F55;&#x6298;&#x53E0;&#x3002;</p>
+<p>&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x662F;&#xFF1A;<code>toggle-chapters</code>&#x3002;&#x5177;&#x4F53;&#x914D;&#x7F6E;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;<br>&#x9996;&#x5148;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#xFF08;&#x5373;SUMMARY.md&#x540C;&#x7EA7;&#x7684;&#x76EE;&#x5F55;&#xFF09;&#xFF0C;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6; <code>book.json</code> &#x4E2D;&#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;plugins&quot;</span>:[<span class="hljs-string">&quot;toggle-chapters&quot;</span>]
+}
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x9700;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x6B65;&#x9AA4;&#xFF1A;  </p>
+<pre><code class="lang-shell">$ cd gitbook &#x76EE;&#x5F55;
+$ npm install gitbook-plugin-toggle-chapters  # &#x5B89;&#x88C5;&#x63D2;&#x4EF6;
+$ gitbook build
+$ gitbook serve
+</code></pre>
+<p>&#x8BBF;&#x95EE; <code>http://localhost:4000</code> &#x770B;&#x63D2;&#x4EF6;&#x662F;&#x5426;&#x751F;&#x6548;&#x3002;</p>
 <h4 id="gitbook-&#x53C2;&#x8003;&#x8D44;&#x6599;">Gitbook &#x53C2;&#x8003;&#x8D44;&#x6599;</h4>
 <p><a href="https://yuzeshan.gitbooks.io/gitbook-studying/content/index.html" target="_blank">Gitbook &#x5165;&#x95E8;&#x6559;&#x7A0B;</a><br><a href="http://www.chengweiyang.cn/gitbook/" target="_blank">Gitbook &#x7B80;&#x660E;&#x6559;&#x7A0B;</a><br><a href="http://yangjh.oschina.io/gitbook/" target="_blank">Gitbook &#x5B66;&#x4E60;&#x7B14;&#x8BB0;</a><br><a href="http://gitbook.zhangjikai.com/" target="_blank">Gitbook &#x7B80;&#x5355;&#x6559;&#x7A0B;</a>  </p>
 
@@ -738,7 +757,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"gitbook 教程","level":"1.2.1","depth":2,"next":{"title":"gitbook 集成到Github","level":"1.2.2","depth":2,"path":"sundry/gitbook-to-github.md","ref":"sundry/gitbook-to-github.md","articles":[]},"previous":{"title":"乱七八糟","level":"1.2","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"gitbook 教程","level":"1.2.1","depth":2,"path":"sundry/gitbook-doc.md","ref":"sundry/gitbook-doc.md","articles":[]},{"title":"gitbook 集成到Github","level":"1.2.2","depth":2,"path":"sundry/gitbook-to-github.md","ref":"sundry/gitbook-to-github.md","articles":[]},{"title":"markdown 语法","level":"1.2.3","depth":2,"path":"sundry/markdown-doc.md","ref":"sundry/markdown-doc.md","articles":[]},{"title":"Maven 私服搭建","level":"1.2.4","depth":2,"path":"sundry/maven-nexus.md","ref":"sundry/maven-nexus.md","articles":[]},{"title":"Font Awesome字体","level":"1.2.5","depth":2,"url":"http://fontawesome.dashgame.com/","ref":"http://fontawesome.dashgame.com/","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sundry/gitbook-doc.md","mtime":"2018-12-23T13:42:42.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-28T06:46:47.431Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gitbook 教程","level":"1.2.1","depth":2,"next":{"title":"gitbook 集成到Github","level":"1.2.2","depth":2,"path":"sundry/gitbook-to-github.md","ref":"sundry/gitbook-to-github.md","articles":[]},"previous":{"title":"乱七八糟","level":"1.2","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"gitbook 教程","level":"1.2.1","depth":2,"path":"sundry/gitbook-doc.md","ref":"sundry/gitbook-doc.md","articles":[]},{"title":"gitbook 集成到Github","level":"1.2.2","depth":2,"path":"sundry/gitbook-to-github.md","ref":"sundry/gitbook-to-github.md","articles":[]},{"title":"markdown 语法","level":"1.2.3","depth":2,"path":"sundry/markdown-doc.md","ref":"sundry/markdown-doc.md","articles":[]},{"title":"Maven 私服搭建","level":"1.2.4","depth":2,"path":"sundry/maven-nexus.md","ref":"sundry/maven-nexus.md","articles":[]},{"title":"Font Awesome字体","level":"1.2.5","depth":2,"url":"http://fontawesome.dashgame.com/","ref":"http://fontawesome.dashgame.com/","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters"],"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sundry/gitbook-doc.md","mtime":"2019-03-28T07:04:18.478Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-28T07:11:37.092Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -746,6 +765,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
