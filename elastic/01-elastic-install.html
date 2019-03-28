@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Nginx 安装 · GitBook</title>
+        <title>01-elasticsearch安装 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="nginx-commandline.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -290,9 +288,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="nginx-install.html">
+        <li class="chapter " data-level="1.5.1" data-path="../nginx/nginx-install.html">
             
-                <a href="nginx-install.html">
+                <a href="../nginx/nginx-install.html">
             
                     
                     Nginx 安装
@@ -303,9 +301,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="nginx-commandline.html">
+        <li class="chapter " data-level="1.5.2" data-path="../nginx/nginx-commandline.html">
             
-                <a href="nginx-commandline.html">
+                <a href="../nginx/nginx-commandline.html">
             
                     
                     Ngixn 命令
@@ -316,9 +314,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="nginx-virtualhost.html">
+        <li class="chapter " data-level="1.5.3" data-path="../nginx/nginx-virtualhost.html">
             
-                <a href="nginx-virtualhost.html">
+                <a href="../nginx/nginx-virtualhost.html">
             
                     
                     Nginx 虚拟主机
@@ -585,9 +583,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../elastic/">
+        <li class="chapter " data-level="1.11" data-path="./">
             
-                <a href="../elastic/">
+                <a href="./">
             
                     
                     ElasticSearch
@@ -599,9 +597,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../elastic/01-elastic-install.html">
+        <li class="chapter active" data-level="1.11.1" data-path="01-elastic-install.html">
             
-                <a href="../elastic/01-elastic-install.html">
+                <a href="01-elastic-install.html">
             
                     
                     01-elasticsearch安装
@@ -647,7 +645,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Nginx 安装</a>
+        <a href=".." >01-elasticsearch安装</a>
     </h1>
 </div>
 
@@ -662,67 +660,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="nginx-&#x7684;&#x5B89;&#x88C5;">nginx &#x7684;&#x5B89;&#x88C5;</h1>
-<p>Nginx &#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x6027;&#x80FD;&#x7684;HTTP&#x548C;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x3002;<br>Nginx &#x5B98;&#x65B9;&#x7F51;&#x5740;&#x662F;&#xFF1A;<a href="http://nginx.org" target="_blank">http://nginx.org</a><br>Nginx &#x5B89;&#x88C5;&#x65F6;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x8BF7;&#x63D0;&#x524D;&#x5B89;&#x88C5;  </p>
-<ol>
-<li><p>&#x4F9D;&#x8D56;&#x6A21;&#x5757;<br>gzip &#x6A21;&#x5757;&#x9700;&#x8981;zlib&#x5E93;<br>rewrite &#x6A21;&#x5757;&#x9700;&#x8981;pcre&#x5E93;<br>ssl &#x529F;&#x80FD;&#x9700;&#x8981;openssl&#x5E93;   </p>
-</li>
-<li><p>PCRE&#x5E93;&#x7684;&#x5B89;&#x88C5;<br>&#x5B98;&#x7F51;&#xFF1A;<a href="http://www.pcre.org" target="_blank">http://www.pcre.org</a> &#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7248;&#x672C;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
-<pre><code class="lang-shell"> $ tar -zxvf pcre-8.40.tar.gz
- $ cd pcre-8.40
- $ sudo ./configure --prefix=/usr/local/pcre
- $ sudo make
- $ sudo make install
-
- &#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5728;make&#x65F6;&#x62A5;&#x9519;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5148;&#x5B89;&#x88C5; build-essential
- $ sudo apt install build-essential
+                                <h1 id="01-elasticsearch-&#x5B89;&#x88C5;">01 ElasticSearch &#x5B89;&#x88C5;</h1>
+<p>&#x5168;&#x6587;&#x641C;&#x7D22;&#x76EE;&#x524D;&#x5DF2;&#x6210;&#x4E3A;&#x5404;&#x4E2A;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x5E38;&#x89C1;&#x7684;&#x9700;&#x6C42;&#xFF0C;ElasticSearch&#xFF08;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0;ES&#xFF09;&#x5DF2;&#x6210;&#x4E3A;&#x76EE;&#x524D;&#x5E02;&#x9762;&#x4E0A;&#x5168;&#x6587;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7684;&#x9996;&#x9009;&#x3002;</p>
+<p>ES &#x7684;&#x5B98;&#x65B9;&#x7F51;&#x5740;&#x662F;&#xFF1A;<a href="https://www.elastic.co" target="_blank">https://www.elastic.co</a></p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x672C;&#x6587;&#x662F;&#x57FA;&#x4E8E; ES 6.7.0&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F; macOS Mojave 10.14.3</p>
+</blockquote>
+<h3 id="1-elasticsearch-&#x5B89;&#x88C5;">1. ElasticSearch &#x5B89;&#x88C5;</h3>
+<p>1.1 ES &#x7684;&#x5B89;&#x88C5;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x9996;&#x5148;&#x4ECE;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;&#x5BF9;&#x5E94;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;</p>
+<pre><code class="lang-shell">$ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.0.tar.gz
+$ tar -zxvf elasticsearch-6.7.0
+$ ls -l
+total 896
+drwxr-xr-x  45 sontek  staff    1440 Mar 21 23:34 bin
+drwxr-xr-x   9 sontek  staff     288 Mar 21 23:34 config
+drwxr-xr-x  42 sontek  staff    1344 Mar 21 23:34 lib
+drwxr-xr-x   2 sontek  staff      64 Mar 21 23:34 logs
+drwxr-xr-x  31 sontek  staff     992 Mar 21 23:34 modules
+drwxr-xr-x   2 sontek  staff      64 Mar 21 23:34 plugins
+-rw-r--r--   1 sontek  staff   13675 Mar 21 23:29 LICENSE.txt
+-rw-r--r--   1 sontek  staff  427502 Mar 21 23:34 NOTICE.txt
+-rw-r--r--   1 sontek  staff    8519 Mar 21 23:29 README.textile
 </code></pre>
-</li>
-<li><p>zlib&#x5E93;&#x7684;&#x5B89;&#x88C5;<br>&#x5B98;&#x7F51;&#xFF1A;<a href="http://www.zlib.net" target="_blank">http://www.zlib.net</a>  </p>
-<pre><code class="lang-shell"> $ tar -zxvf zlib-1.2.11.tar.gz
- $ cd zlib-1.2.11
- $ sudo ./configure
- $ sudo make
- $ sudo make install
+<p>1.2 &#x542F;&#x52A8; ES</p>
+<pre><code class="lang-shell">$ ./bin/elasticsearch
 </code></pre>
-</li>
-<li><p>openssl&#x7684;&#x5B89;&#x88C5;<br>&#x5B98;&#x7F51;&#xFF1A;<a href="https://www.openssl.org" target="_blank">https://www.openssl.org</a></p>
-<pre><code class="lang-shell"> $ tar -zxvf openssl-1.0.21.tar.gz
- $ cd openssl-1.0.21
- $ ./config
- $ ./config -t
- $ make depend
- $ sudo make
- $ sudo make install
+<p>&#x5982;&#x679C;&#x4E00;&#x5207;&#x6B63;&#x5E38;&#xFF0C;&#x90A3;&#x4E48; ES &#x5C31;&#x4F1A;&#x5728;&#x9ED8;&#x8BA4;&#x7684; 9200 &#x7AEF;&#x53E3;&#x8FD0;&#x884C;&#xFF0C;&#x6B64;&#x65F6;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x8BF7;&#x6C42;&#x8BE5;&#x7AEF;&#x53E3;&#x3002;&#x6216;&#x8005;&#x4F7F;&#x7528; curl &#x547D;&#x4EE4;&#x4E5F;&#x53EF;&#x4EE5;</p>
+<pre><code class="lang-shell">$ curl localhost:9200
+{
+  &quot;name&quot; : &quot;ctHNbGD&quot;,
+  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,
+  &quot;cluster_uuid&quot; : &quot;cjtHUz12RViYzSua9a0uIw&quot;,
+  &quot;version&quot; : {
+    &quot;number&quot; : &quot;6.7.0&quot;,
+    &quot;build_flavor&quot; : &quot;default&quot;,
+    &quot;build_type&quot; : &quot;tar&quot;,
+    &quot;build_hash&quot; : &quot;8453f77&quot;,
+    &quot;build_date&quot; : &quot;2019-03-21T15:32:29.844721Z&quot;,
+    &quot;build_snapshot&quot; : false,
+    &quot;lucene_version&quot; : &quot;7.7.0&quot;,
+    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,
+    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;
+  },
+  &quot;tagline&quot; : &quot;You Know, for Search&quot;
+}
 </code></pre>
-</li>
-<li><p>Nginx&#x7684;&#x5B89;&#x88C5;   </p>
-<pre><code class="lang-shell"> $ tar -zxvf nginx-1.10.3.tar.gz
- $ cd nginx-1.10.3
- $ sudo ./configure --prefix=/usr/local/nginx 
-         --with-http_ssl_module 
-         --with-openssl=../openssl-1.0.21
-         --with-pcre=../pcre-8.40 
-         --with-zlib=../zlib-1.2.11 
- $ sudo make
- $ sudo make install
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;ES &#x8FD4;&#x56DE;&#x4E00;&#x4E2A; JSON &#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x3001;&#x96C6;&#x7FA4;&#x3001;&#x7248;&#x672C;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;ES &#x53EA;&#x5141;&#x8BB8;&#x672C;&#x673A;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#xFF0C;&#x5982;&#x9700;&#x8981;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x9700;&#x4FEE;&#x6539; ES &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x5C06; ES &#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>config/elasticsearch.yml</code> &#x6587;&#x4EF6;&#x4E2D;&#x7684;
+<code>network.host</code> &#x6CE8;&#x91CA;&#x53BB;&#x6389;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x503C;&#x6539;&#x6210; <code>0.0.0.0</code>&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-shell">network.host: 0.0.0.0
 </code></pre>
-</li>
-<li><p>Nginx &#x914D;&#x7F6E;&#x6587;&#x4EF6;<br><code>$ vim /usr/local/nginx/conf/nginx.conf</code></p>
-</li>
-<li><p>&#x68C0;&#x6D4B;Nginx&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF0C;&#x5EFA;&#x8BAE;&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540E;&#x5747;&#x9700;&#x68C0;&#x6D4B;&#x4E00;&#x4E0B;<br><code>$ /usr/local/nginx/sbin/nginx -t</code><br>&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x4FE1;&#x606F;&#xFF0C;&#x4EE3;&#x8868;&#x6210;&#x529F;&#xFF1A;     </p>
-<pre><code> nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
- nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
-</code></pre></li>
-<li><p>&#x542F;&#x52A8;&#x3001;&#x505C;&#x6B62;&#x3001;&#x91CD;&#x542F;Nginx   </p>
-<pre><code class="lang-shell"> $ sudo /usr/local/nginx/sbin/nginx              # &#x542F;&#x52A8;
- $ sudo /usr/local/nginx/sbin/nginx -s stop      # &#x505C;&#x6B62;
- $ sudo /usr/local/nginx/sbin/nginx -s reload    # &#x91CD;&#x542F;
-</code></pre>
-</li>
-<li><p>&#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x542F;&#x52A8;<br>&#x7F16;&#x8F91;/etc&#x4E0B;&#x9762;&#x7684;rc.local<br><code>$ sudo vim /etc/rc.local</code><br>&#x6DFB;&#x52A0;&#xFF1A;<br><code>/usr/local/nginx/sbin/nginx</code></p>
-</li>
-</ol>
 
                                 
                                 </section>
@@ -750,14 +737,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: nginx">
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ElasticSearch">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="nginx-commandline.html" class="navigation navigation-next " aria-label="Next page: Ngixn 命令">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -766,7 +749,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nginx 安装","level":"1.5.1","depth":2,"next":{"title":"Ngixn 命令","level":"1.5.2","depth":2,"path":"nginx/nginx-commandline.md","ref":"nginx/nginx-commandline.md","articles":[]},"previous":{"title":"nginx","level":"1.5","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"Nginx 安装","level":"1.5.1","depth":2,"path":"nginx/nginx-install.md","ref":"nginx/nginx-install.md","articles":[]},{"title":"Ngixn 命令","level":"1.5.2","depth":2,"path":"nginx/nginx-commandline.md","ref":"nginx/nginx-commandline.md","articles":[]},{"title":"Nginx 虚拟主机","level":"1.5.3","depth":2,"path":"nginx/nginx-virtualhost.md","ref":"nginx/nginx-virtualhost.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nginx/nginx-install.md","mtime":"2018-12-23T13:42:42.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-28T06:46:47.431Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01-elasticsearch安装","level":"1.11.1","depth":2,"previous":{"title":"ElasticSearch","level":"1.11","depth":1,"path":"elastic/README.md","ref":"elastic/README.md","articles":[{"title":"01-elasticsearch安装","level":"1.11.1","depth":2,"path":"elastic/01-elastic-install.md","ref":"elastic/01-elastic-install.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"elastic/01-elastic-install.md","mtime":"2019-03-28T06:39:43.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-28T06:46:47.431Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
