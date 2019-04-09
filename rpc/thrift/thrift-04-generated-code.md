@@ -18,7 +18,6 @@
 
 除了上面的 `Transport` 接口之外，`Thrift` 还使用 `ServerTransport` 接口来接收或创建原始传输对象，也就是说，`ServerTransport` 主要用于服务器端，为传入连接创建新的传输对象。`ServerTransport` 接口有：
 
-* open
 * listen
 * accept
 * close
