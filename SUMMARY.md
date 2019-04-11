@@ -2,6 +2,7 @@
 
 * [简介](README.md)
 * [乱七八糟](README.md)
+	* [Git 简单笔记](sundry/git-note.md)
 	* [gitbook 教程](sundry/gitbook-doc.md)
 	* [gitbook 集成到Github](sundry/gitbook-to-github.md)
 	* [markdown 语法](sundry/markdown-doc.md)
