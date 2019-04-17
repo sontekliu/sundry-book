@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01-传统线程技术 · GitBook</title>
+        <title>01-yarn · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,8 +60,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="02-traditional-mutex.html" />
     
     
     <link rel="prev" href="../" />
@@ -539,9 +537,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.9.1" data-path="01-traditional-thread.html">
+        <li class="chapter " data-level="1.9.1" data-path="../thread/01-traditional-thread.html">
             
-                <a href="01-traditional-thread.html">
+                <a href="../thread/01-traditional-thread.html">
             
                     
                     01-传统线程技术
@@ -552,9 +550,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="02-traditional-mutex.html">
+        <li class="chapter " data-level="1.9.2" data-path="../thread/02-traditional-mutex.html">
             
-                <a href="02-traditional-mutex.html">
+                <a href="../thread/02-traditional-mutex.html">
             
                     
                     02-线程之间的互斥
@@ -565,9 +563,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="03-traditional-communication.html">
+        <li class="chapter " data-level="1.9.3" data-path="../thread/03-traditional-communication.html">
             
-                <a href="03-traditional-communication.html">
+                <a href="../thread/03-traditional-communication.html">
             
                     
                     03-线程之间的通信
@@ -578,9 +576,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="04-traditional-thread-state.html">
+        <li class="chapter " data-level="1.9.4" data-path="../thread/04-traditional-thread-state.html">
             
-                <a href="04-traditional-thread-state.html">
+                <a href="../thread/04-traditional-thread-state.html">
             
                     
                     04-线程状态
@@ -591,9 +589,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.5" data-path="05-traditional-thread-join.html">
+        <li class="chapter " data-level="1.9.5" data-path="../thread/05-traditional-thread-join.html">
             
-                <a href="05-traditional-thread-join.html">
+                <a href="../thread/05-traditional-thread-join.html">
             
                     
                     05-线程join方法
@@ -655,9 +653,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../front/01-yarn.html">
+        <li class="chapter active" data-level="1.11.1" data-path="01-yarn.html">
             
-                <a href="../front/01-yarn.html">
+                <a href="01-yarn.html">
             
                     
                     01-yarn
@@ -703,7 +701,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >01-传统线程技术</a>
+        <a href=".." >01-yarn</a>
     </h1>
 </div>
 
@@ -718,86 +716,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F20;&#x7EDF;&#x7EBF;&#x7A0B;&#x6280;&#x672F;">&#x4F20;&#x7EDF;&#x7EBF;&#x7A0B;&#x6280;&#x672F;</h1>
-<p>&#x5728; Java &#x7684;&#x4E16;&#x754C;&#x4E2D;&#xFF0C;&#x4E07;&#x4E8B;&#x4E07;&#x7269;&#x5168;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x7136;&#x7EBF;&#x7A0B;&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;&#xFF0C;&#x5728; Java &#x4E2D;&#x8868;&#x793A;&#x7EBF;&#x7A0B;&#x7684;&#x7C7B;&#x662F; Thread&#xFF0C;&#x548C;&#x521B;&#x5EFA;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x7528; <code>new</code> &#x5173;&#x952E;&#x5B57;&#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>Thread thread = new Thread();</code>&#x3002;&#x521B;&#x5EFA;&#x4E86;&#x7EBF;&#x7A0B;&#x80AF;&#x5B9A;&#x662F;&#x4E3A;&#x4E86;&#x8BA9;&#x7EBF;&#x7A0B;&#x53BB;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x662F;&#x8C03;&#x7528;&#x5176; <code>start()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8DDF;&#x8FDB;&#x6E90;&#x4EE3;&#x7801;&#x53D1;&#x73B0;&#xFF0C;<code>start()</code> &#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x7684;&#x662F; <code>start0()</code>&#xFF0C;&#x800C; <code>start0()</code> &#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x4EE5;&#x524D;&#x5B66;&#x7684;&#x77E5;&#x8BC6;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#xFF0C;&#x8C03;&#x7528; <code>start()</code> &#x65B9;&#x6CD5;&#x5176;&#x5B9E;&#x662F;&#x7CFB;&#x7EDF;&#x5E95;&#x5C42;&#x542F;&#x52A8;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x53BB;&#x6267;&#x884C; <code>Thread</code> &#x91CC;&#x9762;&#x7684; <code>run()</code> &#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x7EFC;&#x4E0A;&#x6240;&#x77E5;&#xFF0C;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x5E76;&#x8BA9;&#x5176;&#x6267;&#x884C;&#x5206;&#x4E24;&#x6B65;&#xFF1A;  </p>
-<ol>
-<li>&#x521B;&#x5EFA;&#x7EBF;&#x7A0B; <code>new Thread()</code>   </li>
-<li>&#x8BA9;&#x7EBF;&#x7A0B;&#x8DD1;&#x8D77;&#x6765;&#xFF0C;&#x8C03;&#x7528; <code>start()</code></li>
-</ol>
-<p>&#x60F3;&#x8BA9;&#x5B50;&#x7EBF;&#x7A0B;&#x53BB;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x7EBF;&#x7A0B;&#x6280;&#x672F;&#x7684;&#x8BDD;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<p><strong>1. &#x7EE7;&#x627F; Thread &#x7C7B;&#xFF0C;&#x91CD;&#x5199;&#x5176; run &#x65B9;&#x6CD5;</strong>  </p>
-<pre><code class="lang-java"> <span class="hljs-comment">// &#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;</span>
- Thread thread = <span class="hljs-keyword">new</span> Thread(){
-     <span class="hljs-meta">@Override</span>
-     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-         <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
-             <span class="hljs-keyword">try</span> {
-                 Thread.sleep(<span class="hljs-number">1000</span>);
-                 System.out.println(<span class="hljs-string">&quot;current thread name is :&quot;</span> + Thread.currentThread().getName());
-                 <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; this&#xFF0C;&#x56E0;&#x4E3A; this &#x5BF9;&#x8C61;&#x5C31;&#x8868;&#x793A;&#x7EBF;&#x7A0B;</span>
-                 System.out.println(<span class="hljs-string">&quot;this thread name is :&quot;</span> + <span class="hljs-keyword">this</span>.getName());
-             } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-                 e.printStackTrace();
-             }
-         }
-     }
- };
-
- <span class="hljs-comment">// &#x542F;&#x52A8;&#x7EBF;&#x7A0B;&#xFF0C;&#x5B9E;&#x9645;&#x662F;&#x6267;&#x884C; run &#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
- thread.start();
+                                <h1 id="yarn">yarn</h1>
+<h3 id="1-yarn-install">1. yarn install</h3>
+<pre><code class="lang-shell">$ brew install yarn
 </code></pre>
-<p><strong>2. &#x5B9E;&#x73B0; Runable &#x63A5;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x5BF9;&#x5E94;&#x7684; run &#x65B9;&#x6CD5;</strong></p>
-<pre><code class="lang-java"><span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
-            <span class="hljs-keyword">try</span> {
-                Thread.sleep(<span class="hljs-number">1000</span>);
-                System.out.println(<span class="hljs-string">&quot;current thread name is :&quot;</span> + Thread.currentThread().getName());
-                <span class="hljs-comment">// &#x6B64;&#x5904;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; this&#xFF0C;&#x6B64;&#x65F6;&#x7684; this &#x6307;&#x7684;&#x662F; Runnable &#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x6240;&#x8981;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</span>
-                <span class="hljs-comment">// System.out.println(&quot;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#x662F;This&#xFF1A;&quot; + this.getName());</span>
-            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}).start();
+<h3 id="2-&#x5B89;&#x88C5;&#x4F9D;&#x8D56;">2. &#x5B89;&#x88C5;&#x4F9D;&#x8D56;</h3>
+<pre><code class="lang-shell">$ yarn     // &#x7B49;&#x4E8E; npm install
 </code></pre>
-<p>&#x65E2;&#x7136;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x54EA;&#x4E00;&#x79CD;&#x66F4;&#x597D;&#xFF1F;</p>
-<p>&#x7B2C; 2 &#x79CD;&#x66F4;&#x7B26;&#x5408;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x7EBF;&#x7A0B;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF08;Thread&#xFF09;&#xFF0C;&#x7EBF;&#x7A0B;&#x6240;&#x8FD0;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;(Runnable)&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x628A;&#x7EBF;&#x7A0B;&#x548C;&#x6240;&#x8FD0;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4E86;&#x89E3;&#x8026;&#xFF0C;&#x66F4;&#x6709;&#x5229;&#x4E8E;&#x7A0B;&#x5E8F;&#x7684;&#x6269;&#x5C55;&#x3002;</p>
-<p>&#x770B;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x8BF7;&#x95EE;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
-            <span class="hljs-keyword">try</span> {
-                Thread.sleep(<span class="hljs-number">1000</span>);
-                System.out.println(<span class="hljs-string">&quot;&#x53C2;&#x6570;--&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#x662F;&#xFF1A;&quot;</span> + Thread.currentThread().getName());
-                <span class="hljs-comment">// &#x6B64;&#x5904;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; this&#xFF0C;&#x6B64;&#x65F6;&#x7684; this &#x6307;&#x7684;&#x662F; Runnable &#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x6240;&#x8981;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</span>
-                <span class="hljs-comment">// System.out.println(&quot;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#x662F;This&#xFF1A;&quot; + this.getName());</span>
-            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}){
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
-            <span class="hljs-keyword">try</span> {
-                Thread.sleep(<span class="hljs-number">1000</span>);
-                System.out.println(<span class="hljs-string">&quot;&#x5B50;&#x7C7B;--&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#x662F;&#xFF1A;&quot;</span> + Thread.currentThread().getName());
-                <span class="hljs-comment">// &#x6B64;&#x5904;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; this&#xFF0C;&#x6B64;&#x65F6;&#x7684; this &#x6307;&#x7684;&#x662F; Runnable &#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x6240;&#x8981;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x5BBF;&#x4E3B;&#x5BF9;&#x8C61;</span>
-                <span class="hljs-comment">// System.out.println(&quot;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;&#x662F;This&#xFF1A;&quot; + this.getName());</span>
-            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}.start();
+<h3 id="3-&#x6784;&#x5EFA;&#x542F;&#x52A8;&#x5E94;&#x7528;">3. &#x6784;&#x5EFA;/&#x542F;&#x52A8;&#x5E94;&#x7528;</h3>
+<pre><code class="lang-shell">$ yarn build
+$ yarn start
 </code></pre>
-<p>&#x9996;&#x5148;&#x770B;&#x6E05;&#x6B64;&#x4EE3;&#x7801;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x5373;&#xFF1A;<code>new Thread(runable){run()}.start()</code>&#xFF0C;&#x6B64;&#x4EE3;&#x7801;&#x662F;&#x65E2;&#x91CD;&#x5199;&#x4E86;&#x7EBF;&#x7A0B;&#x5B50;&#x7C7B;&#x7684; <code>run</code> &#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x7ED9; <code>Thread</code> &#x4F20;&#x9012;&#x4E86; <code>Runnable</code> &#x53C2;&#x6570;&#xFF0C;&#x6839;&#x636E; <code>Java</code> &#x7EE7;&#x627F;&#x7684;&#x601D;&#x60F3;&#x53EF;&#x77E5;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x4E86;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6267;&#x884C;&#x5B50;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x7C7B;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x7531;&#x6B64;&#x53EF;&#x77E5;&#x5148;&#x6267;&#x884C;&#x5B50;&#x7C7B;&#x7684; <code>run</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="4-&#x5B89;&#x88C5;&#x3001;&#x5378;&#x8F7D;&#x3001;&#x5347;&#x7EA7;&#x6A21;&#x5757;">4. &#x5B89;&#x88C5;&#x3001;&#x5378;&#x8F7D;&#x3001;&#x5347;&#x7EA7;&#x6A21;&#x5757;</h3>
+<pre><code class="lang-shell">$ yarn add react
+$ yarn remove react
+$ yarn add react --dev
+$ yarn upgrade
+</code></pre>
 
                                 
                                 </section>
@@ -825,14 +760,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 线程世界">
+                <a href="../" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 前端">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="02-traditional-mutex.html" class="navigation navigation-next " aria-label="Next page: 02-线程之间的互斥">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -841,7 +772,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01-传统线程技术","level":"1.9.1","depth":2,"next":{"title":"02-线程之间的互斥","level":"1.9.2","depth":2,"path":"thread/02-traditional-mutex.md","ref":"thread/02-traditional-mutex.md","articles":[]},"previous":{"title":"线程世界","level":"1.9","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"01-传统线程技术","level":"1.9.1","depth":2,"path":"thread/01-traditional-thread.md","ref":"thread/01-traditional-thread.md","articles":[]},{"title":"02-线程之间的互斥","level":"1.9.2","depth":2,"path":"thread/02-traditional-mutex.md","ref":"thread/02-traditional-mutex.md","articles":[]},{"title":"03-线程之间的通信","level":"1.9.3","depth":2,"path":"thread/03-traditional-communication.md","ref":"thread/03-traditional-communication.md","articles":[]},{"title":"04-线程状态","level":"1.9.4","depth":2,"path":"thread/04-traditional-thread-state.md","ref":"thread/04-traditional-thread-state.md","articles":[]},{"title":"05-线程join方法","level":"1.9.5","depth":2,"path":"thread/05-traditional-thread-join.md","ref":"thread/05-traditional-thread-join.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters"],"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"thread/01-traditional-thread.md","mtime":"2019-04-11T12:22:11.088Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-17T11:16:52.286Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01-yarn","level":"1.11.1","depth":2,"previous":{"title":"前端","level":"1.11","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"01-yarn","level":"1.11.1","depth":2,"path":"front/01-yarn.md","ref":"front/01-yarn.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters"],"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"front/01-yarn.md","mtime":"2019-04-17T11:10:13.775Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-17T11:16:52.286Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
