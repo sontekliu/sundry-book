@@ -23,6 +23,7 @@ $ yarn start
 
 ```shell
 $ yarn add react
+$ yarn global add create-react-app
 $ yarn remove react
 $ yarn add react --dev
 $ yarn upgrade
