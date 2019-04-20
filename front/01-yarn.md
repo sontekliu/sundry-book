@@ -17,6 +17,7 @@ yarn 包管理工具，替代 npm。
 $ brew install yarn
 或者 
 $ npm install yarn -g
+$ yarn -v  // 查看安装的版本
 ```
 
 ### 3. yarn 语法
