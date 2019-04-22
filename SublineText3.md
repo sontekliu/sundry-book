@@ -1,9 +1,5 @@
 # Subline Text 3  教程
 
-### 0. Subline Text 3 激活
-
-[参考连接](https://blog.csdn.net/qq_26975307/article/details/89173409)
-
 ### 1. There are no packages available for installation 错误
 
 这个问题出现的原因很简单，就是获取 Sublime Text 3 的频道地址被网络了。我们可以在配置文件里找到这个地址。
