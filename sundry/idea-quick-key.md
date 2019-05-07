@@ -8,6 +8,7 @@
 6. Alt + F7  找到此方法或者属性被使用到的地方
 7. Ctrl + F12 在当前类中查找方法
 8. 右键--> Diagrams --> Show Diagrams... 查看类的结构图
+9. Ctrl + j     查看源代码的 javadoc 文档
 
 
 ** 参考资料 **  
