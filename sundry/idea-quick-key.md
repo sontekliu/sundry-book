@@ -1,12 +1,12 @@
 # IDEA 快捷键说明
 
-1. Ctrl+E，最近查看的文件
-2. Ctrl+Shift+E，最近更改过的文件
+1. Ctrl + E，最近查看的文件
+2. Ctrl + Shift + E，最近更改过的文件
 3. Ctrl + i 	实现接口的方法
 4. Ctrl + Alt + F7	显示此方法或者属性在哪儿些地方被使用（弹出列表的形式）
 5. Ctrl + Shift + F7 在此文件中高亮显示此方法或者属性
 6. Alt + F7  找到此方法或者属性被使用到的地方
-7. Ctrl + F12 在当前类中查找方法
+7. Ctrl + F12 在当前类中查找方法, mac (Command + F12)
 8. 右键--> Diagrams --> Show Diagrams... 查看类的结构图
 9. Ctrl + j     查看源代码的 javadoc 文档
 
