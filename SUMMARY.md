@@ -12,6 +12,7 @@
 	* [Maven 私服搭建](sundry/maven-nexus.md)
 	* [IDEA 配置](sundry/idea-config.md)
 	* [IDEA 快捷键](sundry/idea-quick-key.md)
+	* [iTerm2](sundry/iterm2.md)
 	* [Font Awesome字体](http://fontawesome.dashgame.com/)
 * [mariadb](README.md)
 	* [mariadb 安装](mariadb/mariadb-install.md)
