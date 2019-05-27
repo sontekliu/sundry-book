@@ -42,6 +42,7 @@
 	* [05-线程join方法](thread/05-traditional-thread-join.md)
 * [Linux](README.md)
 	* [01-Linux常用命令总结](linux/001-linux-command.md)
+	* [01-Linux防火墙](linux/002-linux-firewall.md)
 * [数据结构与算法](README.md)
 	* [01-简介](datastructure/01-intro.md)
 * [前端](README.md)
