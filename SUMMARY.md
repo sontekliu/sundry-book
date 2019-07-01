@@ -4,6 +4,7 @@
 * [编辑器](README.md)
 	* [SublineText3快捷键](editortools/SublineText3-Quick-Key.md)
 	* [SublineText3问题](editortools/SublineText3.md)
+	* [iTerm2指南](editortools/iTerm2-guide.md)
 * [乱七八糟](README.md)
 	* [Git 简单笔记](sundry/git-note.md)
 	* [gitbook 教程](sundry/gitbook-doc.md)
