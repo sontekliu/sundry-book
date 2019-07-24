@@ -23,6 +23,12 @@ public class Test {
         }
 
         // JDK1.8 之后 lambda 形式
+        names.forEach((String item) -> {
+            System.out.println(item);
+        });
+        // JDK8 支持类型推断，类型可省略；代码体只有一句，大括号可省略
+        names.forEach((item) -> System.out.println(item));
+        // 如果参数只有一个，括号也可以省略.
         names.forEach(item -> System.out.println(item));
         // JDK1.8之后，方法引用的形式
         names.forEach(System.out::println);
@@ -90,7 +96,7 @@ public class Test {
 在 `Java` 中，我们无法将函数作为参数传递给一个方法，也无法声明返回一个函数的方法。而在 `Javascript` 中，函数参数是一个函数，
 返回值是另一个函数的情况是非常常见的，`javascript` 是一门非常典型的函数式语言。
 
-`Java8` 之后，我们不仅可以传递值，还可以传递行为(函数式接口)。
+`Java8` 之后，我们不仅可以传递值，还可以传递方法。
 
 ---
 ##### 3. Lambda 表达式语法
@@ -121,33 +127,81 @@ arg -> {}
 
 ##### 1. 函数式接口定义
 
-一个函数式接口必须满足如下条件(见源码):
+只包含一个抽象方法的接口是函数式接口。一般使用 `@FunctionalInterface` 注解标明。
 
-* 必须是一个接口，并且该接口只有一个抽象方法。
-* 可以包含 `Object` 类里的某个抽象方法
-* 可以不需要 `@FunctionInterface` 声明
+几点说明：
+    
+    如果接口中包含 Object 类中的某个方法也是可以的。
+    也可以没有 @FunctionalInterface 注解声明
 
+
+---
 ##### 2. JDK中常见的函数式接口
 
+| 序号 | 函数名称  | 抽象接口          | 描述                        |
+|------|-----------|-------------------|-----------------------------|
+| 1    | Consumer  | void accept(T t)  | 接收一个参数，没有返回值    |
+| 2    | Function  | R apply(T t)      | 接收一个参数，返回一个对象  |
+| 3    | Predicate | boolean test(T t) | 接收一个参数，返回boolean值 |
+| 4    | Supplier  | T get()           | 不接收参数，返回一个对象    |
 
+* Predicate 
 
+```java
+public class PredicateTest {
 
+    public static void main(String[] args) {
+        // 整型数组
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
+        PredicateTest predicateTest = new PredicateTest();
+        // 取出偶数并打印
+        predicateTest.conditionFilter(list, item -> item % 2 == 0);
+        System.out.println("------------");
+        // 取出奇数并打印
+        predicateTest.conditionFilter(list, item -> item % 2 != 0);
+        System.out.println("------------");
+        // 找出大于 5 的数字
+        predicateTest.conditionFilter(list, item -> item > 5);
+    }
 
+    // 条件过滤, 但是具体什么条件，在使用时传入
+    public void conditionFilter(List<Integer> list, Predicate<Integer> predicate) {
+        list.forEach(item -> {
+            if (predicate.test(item)) {
+                System.out.println(item);
+            }
+        });
+    }
+}
+```
 
+从上面的代码可以看出，函数式编程提供了一种更高层次的抽象，之前写一个方法的时候，必须确定这个方法是
+用来干什么的，有了 `Lambda` 之后，使得编写的方法更加抽象，更加通用。现在的方法不仅仅可以传值，还可以传递行为。
 
+可以在程序代码中编写一个通用的过滤方法，代码如下：
 
+```
+    public &lt;T&gt; List&lt;T&gt; filter(List&lt;T&gt; list, Predicate&lt;T&gt; predicate) {
+        List&lt;T&gt; result = new ArrayList<>();
+        for (T t: list) {
+            if (predicate.test(t)) {
+                result.add(t);
+            }
+        }
+        return result;
+    }
+```
 
-
-
-
-
-
-
-
-
-
-
-
+* Function
+```
+    public &lt;T, R&gt; List&lt;R&gt; map(List&lt;T&gt; list, Function&lt;T, R&gt; function) {
+        List&lt;R&gt; result = new ArrayList<>();
+        for (T t: list) {
+            result.add(function.apply(t));
+        }
+        return result;
+    }
+```
 
 
