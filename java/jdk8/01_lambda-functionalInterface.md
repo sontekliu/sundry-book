@@ -1,8 +1,8 @@
 # Lambda 表达式和函数式接口
 
-### 1. Lambda 表达式
+## 1. Lambda 表达式
 
-##### 1. Lambda 示例代码
+### 1.1 Lambda 示例代码
 
 > 示例1
 
@@ -14,7 +14,7 @@ public class Test {
         List<String> names = Arrays.asList("张三", "李四", "王五", "赵六");
         // JDK1.5 之前
         for (int i=0; i< names.size(); i++) {
-            System.out.println(names[i]);
+            System.out.println(names.get(i));
         }
 
         // JDK1.5 之后, 1.8 之前
@@ -36,6 +36,8 @@ public class Test {
 }
 ```
 
+
+---
 > 示例2
 
 遍历当前目录下面的隐藏文件：
@@ -58,6 +60,7 @@ public class Test {
 }
 ```
 
+---
 > 示例3
 
 启动一个线程
@@ -81,7 +84,7 @@ public class Test {
 ```
 
 ---
-##### 2. 什么是 Lambda 表达式
+### 1.2 什么是 Lambda 表达式
 
 维基百科：
 > Lambda: In programming languages such as Lisp, Python, Ruby, lambda is an operator 
@@ -93,13 +96,15 @@ public class Test {
 > 是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包。
 
 
-在 `Java` 中，我们无法将函数作为参数传递给一个方法，也无法声明返回一个函数的方法。而在 `Javascript` 中，函数参数是一个函数，
-返回值是另一个函数的情况是非常常见的，`javascript` 是一门非常典型的函数式语言。
+`JDK1.8` 之前，`java` 是不支持函数式编程的，所谓函数式编程可以简单理解为将一个函数(或称为行为)作为参数进行传递。
+在 `Java` 中我们通常使用的是面向对象编程，面向对象编程是对数据的抽象，而函数式编程是对行为的抽象。
+`jdk1.8` 之后，我们不仅仅可以传递值，传递函数, 还可以返回一个函数。
 
-`Java8` 之后，我们不仅可以传递值，还可以传递方法。
 
 ---
-##### 3. Lambda 表达式语法
+### 1.3 Lambda 表达式语法
+
+完整的结构
 
 ```
 (Type1 arg1, Type2 arg2, ...) -> {
@@ -123,20 +128,26 @@ arg -> {}
 () -> {}
 ```
 
-### 2. 函数式接口
 
-##### 1. 函数式接口定义
+## 2. 函数式接口
 
-只包含一个抽象方法的接口是函数式接口。一般使用 `@FunctionalInterface` 注解标明。
+### 2.1 函数式接口定义
+
+> 有且仅有一个抽象方法的接口是函数式接口。一般使用 `@FunctionalInterface` 注解标明。
 
 几点说明：
-    
-    如果接口中包含 Object 类中的某个方法也是可以的。
-    也可以没有 @FunctionalInterface 注解声明
 
+* 如果接口中包含 Object 类中的某个方法也是可以的。
+* 也可以没有 @FunctionalInterface 注解声明
+
+函数式接口的实现方式(见源码文档)：
+
+* Lambda 表达式
+* 方法引用
+* 构造方法引用
 
 ---
-##### 2. JDK中常见的函数式接口
+### 2.2 JDK中常见的函数式接口
 
 | 序号 | 函数名称  | 抽象接口          | 描述                        |
 |------|-----------|-------------------|-----------------------------|
@@ -177,7 +188,7 @@ public class PredicateTest {
 ```
 
 从上面的代码可以看出，函数式编程提供了一种更高层次的抽象，之前写一个方法的时候，必须确定这个方法是
-用来干什么的，有了 `Lambda` 之后，使得编写的方法更加抽象，更加通用。现在的方法不仅仅可以传值，还可以传递行为。
+用来干什么的，有了 `Lambda` 之后，使得编写的方法更加抽象，更加通用。
 
 可以在程序代码中编写一个通用的过滤方法，代码如下：
 
@@ -203,5 +214,30 @@ public class PredicateTest {
         return result;
     }
 ```
+
+### 2.3 Lambda 表达式的类型
+
+在支持函数式编程的语言中，函数是被看做一等公民的，如：`javascript` 完全可以在一个 `js` 文件中写一
+个函数，而在 `Java` 目前还不支持，函数必须依附于类，所以在 `Java` 中，函数式接口的实例依然是对象。
+
+```java
+public class ConsumerTest {
+    public static void main(String[] args) {
+        Consumer<String> consumer = item -> System.out.println(item);
+        System.out.println(consumer.getClass().getName());
+        System.out.println(consumer.getClass().getSuperclass());
+        System.out.println(consumer.getClass().getInterfaces().length);
+        System.out.println(consumer.getClass().getInterfaces()[0]);
+    }
+}
+
+输出如下：
+com.suixingpay.jdk8.functionalinterface.ConsumerTest$$Lambda$1/1452126962
+class java.lang.Object
+1
+interface java.util.function.Consumer
+```
+
+
 
 
