@@ -45,6 +45,19 @@ if(null != user) {
         }
     }
 }
+
+// JDK 1.8 使用 Lambda 方式
+Optional<User> optional = Optional.ofNullable(user);
+optional.flatMap(u -> u.getBankCard())
+        .flatMap(card -> card.getBank())
+        .map(bank -> bank.getBankCode())
+        .orElse("ICBC");
+
+// JDK 1.8 使用方法引用的方式
+optional.flatMap(User::getBankCard)
+        .flatMap(BankCard::getBank)
+        .map(Bank::getBankCode)
+        .orElse("ICBC");
 ```
 
 ---
