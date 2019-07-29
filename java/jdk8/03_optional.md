@@ -55,19 +55,19 @@ if(null != user) {
 * 创建一个空对象(以 String 对象举例)
 
 ```
-Optional<String> optional = Optional.empty();
+Optional&lt;String&gt; optional = Optional.empty();
 ```
 
 * 当所容纳对象确定非空时(以 String 对象举例)
 
 ```
-Optional<String> optional = Optional.of(str);
+Optional&lt;String&gt; optional = Optional.of(str);
 ```
 
 * 当所容纳对象不确定是否非空时(以 String 对象举例)
 
 ```
-Optional<String> optional = Optional.ofNullable(str);
+Optional&lt;String&gt; optional = Optional.ofNullable(str);
 ```
 
 
@@ -79,7 +79,7 @@ Optional<String> optional = Optional.ofNullable(str);
 ```
 // 不规范使用
 User user = new User();
-Optional<String> optional = Optional.of(user);
+Optional&lt;User&gt; optional = Optional.of(user);
 if(optional.isPresent()) {
     String userNo = optional.get().getUserNo();
     System.out.println(userNo);
@@ -91,7 +91,7 @@ if(optional.isPresent()) {
 ```
 // 正确使用
 User user2 = new User();
-Optional<User> optional2 = Optional.of(user2);
+Optional&lt;User&gt; optional2 = Optional.of(user2);
 optional2.ifPresent(item -> System.out.println(item.getUserNo()));
 ```
 
@@ -100,8 +100,75 @@ optional2.ifPresent(item -> System.out.println(item.getUserNo()));
 ### 3. 常用方法
 
 * orElse() 返回对象值或者对象为空时，返回默认值
+
+```java
+    public void useOrElse() {
+        User user = null;
+        User user2 = new User("aaaaaa");
+        User result = Optional.ofNullable(user).orElse(user2);
+        System.out.println(result.getUserNo());
+    }
+```
+
+
 * orElseGet() 返回对象值或者对象为空时，执行传入的 `Supplier` 函数式接口
+
+```java
+    public void useOrElseGet() {
+        User user = null;
+        User user2 = new User("aaaaaa");
+        User result = Optional.ofNullable(user).orElseGet(() -> use2);
+        System.out.println(result.getUserNo());
+    }
+```
+
+当传入参数为 `NULL` 时，`orElse` 和 `orElseGet` 这两者无任何差别，但是当传入参数为非空时，二者还是有
+差别的，代码如下：
+
+```java
+    public User createUser() {
+        System.out.println("创建默认用户");
+        return new User("default");
+    }
+
+    public void useOrElse() {
+        User user = new User("S10001");
+        User result = Optional.ofNullable(user).orElse(createUser());
+        System.out.println(result.getUserNo());
+    }
+
+    public void useOrElseGet() {
+        User user = new User("S20002");
+        User result = Optional.ofNullable(user).orElseGet(() -> createUser());
+        System.out.println(result.getUserNo());
+    }
+```
+
+输出内容如下：
+
+```
+创建默认用户
+S10001
+S20002
+```
+
+当 `User` 对象均为非空时，`orElse` 和 `orElseGet` 无任何差别，均会调用 `createUser` 方法，而当 `User`
+为非空对象时，`orElseGet` 方法不会执行 `createUser` 方法。
+
+> 所以当执行密集型调用时，二者性能差异非常大。
+
+
 * orElseThrow() 返回对象值或者对象为空时抛出异常
+
+```java
+    public void useOrElseThrow() {
+        User user = null;
+        Optional.ofNullable(user).orElseThrow(NullPointerException::new);
+    }
+```
+
+* map 和 flatMap 转换值, 使用 Function 函数将对象进行转换
+* filter  过滤选择需要的数据, 使用 Predicate 函数式接口进行过滤
 
 
 ---
@@ -114,17 +181,16 @@ optional2.ifPresent(item -> System.out.println(item.getUserNo()));
 是它与 `Stream` 结合，可以构建流畅的 `API`。示例如下：
 
 ```
-List<User> list = new ArrayList<>();
+List&lt;User&gt; list = new ArrayList<>();
 User user = list.stream().findFirst().orElse(new User());
 ```
 
 ---
 ### 5. 总结
 
-* Optional 的实例化
-* Optional 的正确使用
-* Optional 的常用方法
-* Optional 的注意事项
+* 三种 Optional 的实例化方式
+* 正确使用 Optional
+* 注意 orElse 和 orElseGet 的差异
+* Optional 一般用于方法返回值
 
 
-https://www.cnblogs.com/zhangboyu/p/7580262.html
