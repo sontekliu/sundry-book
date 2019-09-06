@@ -1,5 +1,12 @@
 # Git 整合
 
+先上图：
+![Git Environment](./images/git_environment.png)
+
+前期准备工作:
+    1. 阿里云安装 gitbook
+    2. 阿里云配置 git
+
 1. 首先在阿里云和 Linode 对应目录下创建对应的裸库
 
 * 代码库  `/home/git/gitRepo/code`
@@ -96,7 +103,7 @@ git config --global user.email sontek@yeah.net
 ```
 [remote "origin"]
         url = /home/git/gitRepo/gitbook/git-book.git
-        url = git@github.com:sontekliu/git-book.git
+        url = git@github.com:sontekliu/git-book.git 
         url = git@gitee.com:sontekliu/git-book.git
         url = git@173.230.144.249:/home/git/gitRepo/gitbook/git-book.git
         fetch = +refs/heads/*:refs/remotes/origin/*
@@ -125,10 +132,11 @@ unset GIT_DIR
 GIT_DIR=/home/git/gitspace/gitbook/git-book
 cd $GIT_DIR
 echo `pwd`
-git pull
-git push origin&
-
+# 拉取代码
+git pull origin master 
+# 部署
+sh $GIT_DIR/deploy.sh >/dev/null 2>&1 &
+# 提交到远程
+git push origin >&- 2>&- &
+# git push origin >/dev/null 2>&1 &
 ```
-
-
-
