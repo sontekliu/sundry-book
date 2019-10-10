@@ -9,6 +9,7 @@
 	* [Git 简单笔记](sundry/git-note.md)
 	* [gitbook 教程](sundry/gitbook-doc.md)
 	* [gitbook 集成到Github](sundry/gitbook-to-github.md)
+	* [Git提速](sundry/git-integrate.md)
 	* [markdown 语法](sundry/markdown-doc.md)
 	* [Maven 私服搭建](sundry/maven-nexus.md)
 	* [IDEA 配置](sundry/idea-config.md)
