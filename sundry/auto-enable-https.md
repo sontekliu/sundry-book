@@ -13,6 +13,14 @@ https://www.runoob.com/w3cnote/lets-encrypt-https.html
 ## 1. 安装Certbot客户端
 
 ```shell
-$ sudo yum install certbot
+$ curl https://get.acme.sh | sh
+`i``
+
+## 2. 安装证书
+
+```shell
+export Ali_Key="LTAI4GHMnPm41f861QdEYjKu"
+export Ali_Secret="JQiHvWiwtCwToF8UMlEL3xF0czxBRb"
+$ ~/.acme.sh/acme.sh --issue --standalone -d javaliu.com -d *.javaliu.com
 ```
 
