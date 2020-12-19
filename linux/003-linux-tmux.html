@@ -1,0 +1,1108 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>03-Linux-Tmux · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../" />
+    
+    
+    <link rel="prev" href="002-linux-firewall.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    编辑器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../editortools/SublineText3-Quick-Key.html">
+            
+                <a href="../editortools/SublineText3-Quick-Key.html">
+            
+                    
+                    SublineText3快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../editortools/SublineText3.html">
+            
+                <a href="../editortools/SublineText3.html">
+            
+                    
+                    SublineText3问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../editortools/iTerm2-guide.html">
+            
+                <a href="../editortools/iTerm2-guide.html">
+            
+                    
+                    iTerm2指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    乱七八糟
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../sundry/git-note.html">
+            
+                <a href="../sundry/git-note.html">
+            
+                    
+                    Git 简单笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../sundry/gitbook-doc.html">
+            
+                <a href="../sundry/gitbook-doc.html">
+            
+                    
+                    gitbook 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../sundry/gitbook-to-github.html">
+            
+                <a href="../sundry/gitbook-to-github.html">
+            
+                    
+                    gitbook 集成到Github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../sundry/git-integrate.html">
+            
+                <a href="../sundry/git-integrate.html">
+            
+                    
+                    Git提速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../sundry/markdown-doc.html">
+            
+                <a href="../sundry/markdown-doc.html">
+            
+                    
+                    markdown 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../sundry/maven-nexus.html">
+            
+                <a href="../sundry/maven-nexus.html">
+            
+                    
+                    Maven 私服搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../sundry/idea-config.html">
+            
+                <a href="../sundry/idea-config.html">
+            
+                    
+                    IDEA 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../sundry/idea-quick-key.html">
+            
+                <a href="../sundry/idea-quick-key.html">
+            
+                    
+                    IDEA 快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../sundry/iterm2.html">
+            
+                <a href="../sundry/iterm2.html">
+            
+                    
+                    iTerm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" >
+            
+                <a target="_blank" href="http://fontawesome.dashgame.com/">
+            
+                    
+                    Font Awesome字体
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    mariadb
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../mariadb/mariadb-install.html">
+            
+                <a href="../mariadb/mariadb-install.html">
+            
+                    
+                    mariadb 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../mariadb/mysql-install.html">
+            
+                <a href="../mariadb/mysql-install.html">
+            
+                    
+                    mysql 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../mariadb/mysql-base.html">
+            
+                <a href="../mariadb/mysql-base.html">
+            
+                    
+                    mysql 基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../mongodb/mongodb-install.html">
+            
+                <a href="../mongodb/mongodb-install.html">
+            
+                    
+                    MongoDB 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../nginx/nginx-install.html">
+            
+                <a href="../nginx/nginx-install.html">
+            
+                    
+                    Nginx 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../nginx/nginx-commandline.html">
+            
+                <a href="../nginx/nginx-commandline.html">
+            
+                    
+                    Ngixn 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../nginx/nginx-virtualhost.html">
+            
+                <a href="../nginx/nginx-virtualhost.html">
+            
+                    
+                    Nginx 虚拟主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    HttpClient
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../httpclient/httpclient-timeout.html">
+            
+                <a href="../httpclient/httpclient-timeout.html">
+            
+                    
+                    HttpClient几个超时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../httpclient/httpclient-pool.html">
+            
+                <a href="../httpclient/httpclient-pool.html">
+            
+                    
+                    HttpClient 连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../java/001-tomcat-loader-cpu-high.html">
+            
+                <a href="../java/001-tomcat-loader-cpu-high.html">
+            
+                    
+                    01-Tomcat应用负载过高—CPU过高
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Spring与SpringBoot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../SpringBoot/001-SpringBoot-form-jar-to-war.html">
+            
+                <a href="../SpringBoot/001-SpringBoot-form-jar-to-war.html">
+            
+                    
+                    01-SpringBoot-Jar包转war包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../rpc/thrift/thrift-01-intro.html">
+            
+                <a href="../rpc/thrift/thrift-01-intro.html">
+            
+                    
+                    01-Thrift简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../rpc/thrift/thrift-02-install.html">
+            
+                <a href="../rpc/thrift/thrift-02-install.html">
+            
+                    
+                    02-Thrift安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../rpc/thrift/thrift-03-types.html">
+            
+                <a href="../rpc/thrift/thrift-03-types.html">
+            
+                    
+                    03-Thrift数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../rpc/thrift/thrift-04-generated-code.html">
+            
+                <a href="../rpc/thrift/thrift-04-generated-code.html">
+            
+                    
+                    04-Thrift代码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../rpc/thrift/thrift-05-architecture.html">
+            
+                <a href="../rpc/thrift/thrift-05-architecture.html">
+            
+                    
+                    05-Thrift架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    线程世界
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../thread/01-traditional-thread.html">
+            
+                <a href="../thread/01-traditional-thread.html">
+            
+                    
+                    01-传统线程技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../thread/02-traditional-mutex.html">
+            
+                <a href="../thread/02-traditional-mutex.html">
+            
+                    
+                    02-线程之间的互斥
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../thread/03-traditional-communication.html">
+            
+                <a href="../thread/03-traditional-communication.html">
+            
+                    
+                    03-线程之间的通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../thread/04-traditional-thread-state.html">
+            
+                <a href="../thread/04-traditional-thread-state.html">
+            
+                    
+                    04-线程状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../thread/05-traditional-thread-join.html">
+            
+                <a href="../thread/05-traditional-thread-join.html">
+            
+                    
+                    05-线程join方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="001-linux-command.html">
+            
+                <a href="001-linux-command.html">
+            
+                    
+                    01-Linux常用命令总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="002-linux-firewall.html">
+            
+                <a href="002-linux-firewall.html">
+            
+                    
+                    02-Linux防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.3" data-path="003-linux-tmux.html">
+            
+                <a href="003-linux-tmux.html">
+            
+                    
+                    03-Linux-Tmux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    数据结构与算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../datastructure/01-intro.html">
+            
+                <a href="../datastructure/01-intro.html">
+            
+                    
+                    01-简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../front/01-yarn.html">
+            
+                <a href="../front/01-yarn.html">
+            
+                    
+                    01-yarn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../front/02-jsx.html">
+            
+                <a href="../front/02-jsx.html">
+            
+                    
+                    02-jsx语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../front/03-react-component.html">
+            
+                <a href="../front/03-react-component.html">
+            
+                    
+                    03-React组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../front/04-ES6.html">
+            
+                <a href="../front/04-ES6.html">
+            
+                    
+                    04-ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../front/05-webpack.html">
+            
+                <a href="../front/05-webpack.html">
+            
+                    
+                    05-webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >03-Linux-Tmux</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tmux">Tmux</h1>
+<h2 id="1-tmux-&#x57FA;&#x672C;&#x7528;&#x6CD5;">1. Tmux &#x57FA;&#x672C;&#x7528;&#x6CD5;</h2>
+<h3 id="11-&#x542F;&#x52A8;&#x4E0E;&#x9000;&#x51FA;">1.1 &#x542F;&#x52A8;&#x4E0E;&#x9000;&#x51FA;</h3>
+<pre><code class="lang-shell">$ tmux      # &#x542F;&#x52A8;
+
+$ exit      # &#x9000;&#x51FA;
+</code></pre>
+<h3 id="12-&#x524D;&#x7F00;&#x952E;">1.2 &#x524D;&#x7F00;&#x952E;</h3>
+<p>&#x9ED8;&#x8BA4;&#x524D;&#x7F00;&#x952E; <code>Ctrl + b</code>&#xFF0C; &#x5E2E;&#x52A9;&#x5FEB;&#x6377;&#x952E; <code>Ctrl + b  ?</code>, &#x6309; ESC &#x6216;&#x8005; <code>q</code> &#x9000;&#x51FA;&#x5E2E;&#x52A9;&#x3002;</p>
+<h2 id="2-&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;">2. &#x4F1A;&#x8BDD;&#x7BA1;&#x7406;</h2>
+<pre><code class="lang-shell"># 1. &#x521B;&#x5EFA;&#x4F1A;&#x8BDD;
+$ tmux new -s &lt;session-name&gt;
+# 2. &#x9000;&#x51FA;&#x4F1A;&#x8BDD;  Ctrl + b  d
+$ tmux detach
+
+# 3. &#x5217;&#x51FA;&#x4F1A;&#x8BDD;   Ctrl + b s
+$ tmux ls
+
+# 4. &#x63A5;&#x5165;&#x4F1A;&#x8BDD;
+$ tmux attach -t 0
+$ tmux attach -t &lt;session-name&gt;
+
+# 5. &#x6740;&#x6B7B;&#x4F1A;&#x8BDD;
+$ tmux kill-session -t 0
+$ tmux kill-session -t &lt;session-name&gt;
+
+# 6. &#x5207;&#x6362;&#x4F1A;&#x8BDD;
+$ tmux switch -t 0
+$ tmux switch -t &lt;session-name&gt;
+
+# 7. &#x91CD;&#x547D;&#x540D;&#x4F1A;&#x8BDD;    Ctrl + b $
+$ tmux rename-session -t 0 &lt;new-name&gt;
+</code></pre>
+<h2 id="3-&#x7A97;&#x683C;&#x7BA1;&#x7406;pane">3. &#x7A97;&#x683C;&#x7BA1;&#x7406;(Pane)</h2>
+<pre><code>* Ctrl + b %                    &#x5DE6;&#x53F3;&#x5206;&#x6210;&#x4E24;&#x4E2A; Pane
+* Ctrl + b &quot;                    &#x4E0A;&#x4E0B;&#x5206;&#x6210;&#x4E24;&#x4E2A; Pane
+* Ctrl + b &lt;arrow key&gt;          &#x6309;&#x65B9;&#x5411;&#x952E;&#x5207;&#x6362; Pane
+* Ctrl + b q                    &#x663E;&#x793A; pane &#x7F16;&#x53F7;
+* Ctrl + b ;                    &#x5149;&#x6807;&#x5207;&#x6362;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7F16;&#x53F7; pane
+* Ctrl + b o                    &#x5149;&#x6807;&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7F16;&#x53F7; pane
+* Ctrl + b x                    &#x5173;&#x95ED;&#x5F53;&#x524D; pane
+* Ctrl + b z                    &#x5F53;&#x524D; pane &#x5168;&#x5C4F;&#x663E;&#x793A;&#xFF0C;&#x518D;&#x6B21;&#x4F7F;&#x7528;&#x53D8;&#x56DE;&#x539F;&#x6765;&#x5927;&#x5C0F;
+* Ctrl + b !                    &#x5F53;&#x524D; pane &#x62C6;&#x5206;&#x4E3A;&#x4E00;&#x4E2A; &#x72EC;&#x7ACB; pane (&#x5E38;&#x7528;)
+* Ctrl + b Crtl+&lt;arrow key&gt;     &#x6309;&#x7BAD;&#x5934;&#x65B9;&#x5411;&#x8C03;&#x6574;&#x7A97;&#x683C;&#x5927;&#x5C0F;
+* Ctrl + b {                    &#x5F53;&#x524D; pane &#x4E0E;&#x4E0A;&#x4E00;&#x4E2A; pane &#x4EA4;&#x6362;&#x4F4D;&#x7F6E;
+* Ctrl + b }                    &#x5F53;&#x524D; pane &#x4E0E;&#x4E0B;&#x4E00;&#x4E2A; pane &#x4EA4;&#x6362;&#x4F4D;&#x7F6E;
+* Ctrl + b Ctrl+o               &#x6240;&#x6709; pane &#x5411;&#x524D;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53D8;&#x6210;&#x6700;&#x540E;&#x4E00;&#x4E2A;
+* Ctrl + b Alt+o                &#x6240;&#x6709; pane &#x5411;&#x540E;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53D8;&#x6210;&#x7B2C;&#x4E00;&#x4E2A;
+</code></pre><h2 id="4-&#x7A97;&#x53E3;&#x7BA1;&#x7406;-window">4. &#x7A97;&#x53E3;&#x7BA1;&#x7406; (window)</h2>
+<pre><code>* Crtl + b  c                   &#x65B0;&#x5EFA;&#x65B0;&#x7A97;&#x53E3;&#xFF0C;&#x72B6;&#x6001;&#x680F;&#x4F1A;&#x663E;&#x793A;&#x591A;&#x4E2A;&#x7A97;&#x53E3;
+* Ctrl + b  p                   &#x5207;&#x6362;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#xFF08;&#x6309;&#x7167;&#x72B6;&#x6001;&#x680F;&#x663E;&#x793A;&#x7684;&#x987A;&#x5E8F;&#xFF09;
+* Crtl + b  n                   &#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;
+* Ctrl + b  &lt;number&gt;            &#x5207;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7F16;&#x53F7;&#x7684;&#x7A97;&#x53E3;
+* Ctrl + b  w                   &#x4ECE;&#x7A97;&#x53E3;&#x5217;&#x8868;&#x4E2D;&#x9009;&#x62E9;&#x7A97;&#x53E3;
+* Ctrl + b  ,                   &#x91CD;&#x547D;&#x540D;
+</code></pre><h2 id="5-&#x4FEE;&#x6539;&#x524D;&#x7F00;&#x952E;">5. &#x4FEE;&#x6539;&#x524D;&#x7F00;&#x952E;</h2>
+<pre><code class="lang-shell">$ touch ~/.tmux.conf
+</code></pre>
+<p>&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x5185;&#x5BB9;:</p>
+<pre><code>set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+</code></pre><p>&#x4F7F;&#x6587;&#x4EF6;&#x751F;&#x6548; </p>
+<pre><code class="lang-shell">$ tmux start-server \; source ~/.tmux.conf
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="002-linux-firewall.html" class="navigation navigation-prev " aria-label="Previous page: 02-Linux防火墙">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../" class="navigation navigation-next " aria-label="Next page: 数据结构与算法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"03-Linux-Tmux","level":"1.12.3","depth":2,"next":{"title":"数据结构与算法","level":"1.13","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"01-简介","level":"1.13.1","depth":2,"path":"datastructure/01-intro.md","ref":"datastructure/01-intro.md","articles":[]}]},"previous":{"title":"02-Linux防火墙","level":"1.12.2","depth":2,"path":"linux/002-linux-firewall.md","ref":"linux/002-linux-firewall.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters"],"pluginsConfig":{"toggle-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linux/003-linux-tmux.md","mtime":"2020-09-17T09:53:53.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-17T05:25:43.709Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
